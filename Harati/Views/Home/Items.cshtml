@@ -1,0 +1,108 @@
+﻿@*@model IEnumerable<Harati.Models.Item>*@
+@using PagedList;
+@using PagedList.Mvc; 
+@using Harati.Models
+@model IPagedList<Item>
+@{
+    ViewBag.Title = "Browse all products (ajax)";
+}
+@{
+    ViewBag.Title = "Carpet";
+    Layout = "~/Views/Shared/_LayoutHarati.cshtml";
+}
+
+<h2>Pashmina</h2>
+<style>
+    .image {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    /*.grow {
+        transition: all .2s ease-in-out;
+    }*/
+
+    .overlay:hover {
+        transform: scale(1.1);
+    }
+
+    .overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: orangered;
+        overflow: hidden;
+        width: 100%;
+        height: 0;
+        transition: .5s ease;
+    }
+
+    .container .blog-thumb:hover .overlay {
+        height: 20%;
+        transform: scale(1.1);
+    }
+
+    .container .blog-thumb:hover .zoom {
+        transform: scale(1.2);
+    }
+</style>
+
+
+<section class="tz-our-blog theme-white">
+
+    <div class="container">
+        <div class="row">
+           @foreach (var item in Model)
+            {
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="our-blog-item theme-gray">
+                        <div class="blog-thumb">
+                            <a href="@Url.Action("ViewItem", "Home",new {id=item.Id })">
+                                <img src="~/@item.Image" class="zoom" alt=@item.ItemName>
+                                <div class="overlay">
+                                    <div class="text" style="color:white; margin-left:10px;margin-right:10px;  ">@item.ItemName &nbsp;Rs. @item.Price</div>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            }
+
+        </div><!--end class row-->
+        <!--end class row-->
+
+        <a class="tz-view-more2 tz-view-style2" href="@Url.Action("Items","Home")">
+            <span>LOAD MORE</span>
+        </a>
+
+    <div class="row">
+      
+        <table class="grid">
+            <thead>
+                <tr>
+                    <th>Product name</th>
+                    <th>Category</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var product in Model)
+                {
+                    <tr>
+                        <td>@product.Name</td>
+                        <td>@product.Category</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <div class="pager">
+            @Html.Pager(Model.PageSize, Model.PageNumber, Model.TotalItemCount, new AjaxOptions { UpdateTargetId = "gridcontainer" }).Options(o => o.Action("AjaxPage"))
+        </div>
+    </div>
+    </div><!--end class container-->
+
+
+
+</section>

@@ -1,0 +1,299 @@
+﻿@model IEnumerable<Harati.Models.ItemCategoryWrap>
+
+@{
+    ViewBag.Title = "ViewItem";
+    Layout = "~/Views/Shared/_LayoutHarati.cshtml";
+}
+
+@*<script>
+        $(document).ready(function () {
+            $('#demo-1 .simpleLens-thumbnails-container img').simpleGallery({
+                loading_image: '~/Content/Images/loading.gif'
+            });
+            $('#demo-1 .simpleLens-big-image').simpleLens({
+                loading_image: '~/Content/Images/loading.gif'
+            })
+
+        });
+    </script>
+    <link href="~/assets/magnifier/css/jquery.simpleGallery.css" rel="stylesheet" />
+    <link href="~/assets/magnifier/css/jquery.simpleLens.css" rel="stylesheet" />
+    <script src="~/assets/magnifier/src/jquery.simpleGallery.js"></script>
+    <script src="~/assets/magnifier/src/jquery.simpleLens.js"></script>
+    <link href="~/assets/MessagePop/style.css" rel="stylesheet" />
+    <script src="~/assets/MessagePop/script.js"></script>
+
+    <div style="margin-top:4%;">
+        @foreach (var item in Model)
+        {
+            <div style="margin-left:5%">
+                <h3 class="tz-title-bold-3">@item.Category</h3>
+                <div id="tz-shop-content" class="row">
+                    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                        <div id="slider" class="flexslider">
+                            <div class="slides">
+                                <div class="simpleLens-gallery-container" id="demo-1">
+                                    <div class="simpleLens-container">
+                                        <div class="simpleLens-big-image-container">
+                                            <a class="simpleLens-lens-image" data-lens-image="/@item.Image">
+                                                <img src="~/@item.Image" height="400" width="500" class="simpleLens-big-image">
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="tzshop-summary">
+                            <h3>@item.ItemName</h3>
+                            <span class="tzproduct-single-price">
+                                Rs. @item.Price @*<small>$25.00</small>
+                            </span>
+                            <h6 class="tz-title-details">PRODUCT DETAILS</h6>
+
+                            <p>
+                                @item.Description
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+                <p style="width:10%">
+                    <a href="javascript:void(0);" onclick="history.go(-1);" class="btn btn-default btn-lg" title="Back to list">
+                        <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+                    </a>
+                </p>
+                @if (ViewBag.IsEmailSent != null)
+                {
+                    if (ViewBag.IsEmailSent != false)
+                    {
+                        <div class="green">
+                            <div class="alert alert-success">
+                                <strong>Success!</strong>Order Received.
+                            </div>
+                        </div>
+                    }
+                }
+                @if (ViewData["IsEmailSent"] != null)
+                {
+                    if (ViewData["IsEmailSent"].ToString() != "false")
+                    {
+                        <div class="green">
+                            <div class="alert alert-success">
+                                <strong>Success!</strong>Order Received.
+                            </div>
+                        </div>
+                    }
+
+                }
+                <div class="msg_box" style="right:100px;">
+                    <div class="msg_head">
+                        Order This
+                    </div>
+                    <div class="msg_wrap">
+                        <div class="msg_body">
+                            @using (Html.BeginForm("Order", "Mail", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                            {
+                                @Html.Label("Color")
+                                <input type="text" name="color" required="required" />
+                                @Html.Label("Mobile")
+                                <input type="text" name="mobile" required="required" />
+                                @Html.Label("Email")
+                                <input type="email" name="email" required="required" />
+                                <input type="hidden" name="Image" value="@item.Image.ToString()" />
+                                <input type="hidden" name="Id" value="@item.ItemId.ToString()" />
+                                <input type="hidden" name="Name" value="@item.ItemName.ToString()" />
+                                <br /><br />
+                                <input type="submit" value="Order" class="btn btn-info" />
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>*@
+<script src="~/assets/js/jqueryside.min.js"></script>
+<style>
+		body{
+			font-size:12px;
+			font-family:Verdana,Arial;
+		}
+		#feedback{
+			position: fixed;
+			top:100px;
+			left:-362px;
+		}
+		#feedback form{
+			float: left;
+			border: 1px solid #999;
+			padding: 10px;
+			border-radius:5px;
+		}
+		#feedback form label{
+			display: block;
+			float: left;
+			text-align:right;
+			margin-right:20px;
+			width:70px;
+			font-weight:bold;
+			color: 019AC6;
+			font-size:14px;
+		}
+		#feedback a{
+			background:url("feedback-buttons.png")  no-repeat center left transparent;
+			display: block;
+			width:40px;
+			height:175px;
+			float: left;
+			text-indent:-9999em;
+			position: absolute;
+			top:120px;
+			right:-40px;
+		}
+		#feedback a:hover{
+			background-position: center right;
+		}
+		#feedback form .btn{
+			float: right;
+			background:url("send.png")  no-repeat 0px 0px transparent;
+			text-indent:-9999em;
+			width:80px;
+			height:28px;
+			border:none;
+
+		}
+		#feedback form textarea{
+			width:250px;
+			height:140px;
+			border: 1px solid #019AC6;
+		}
+		#feedback form input[type="text"]{
+			width:250px;
+			height:30px;
+			border: 1px solid #019AC6;
+		}
+		#feedback h2{
+			text-align:center;
+			color: #019AC6;
+			/*text-shadow:0.2px 0.3px 0.3px #000;*/
+			font-size:22px;
+		}
+</style>
+<script type="text/javascript">
+    $(document).ready(function () {
+        //$(".pull_feedback").toggle(function () {
+        //    $("#feedback").animate({ left: "0px" });
+        //    return false;
+        //},
+		//	function () {
+		//	    $("#feedback").animate({ left: "-362px" });
+		//	    return false;
+		//	}
+		//); //toggle
+        $(".pull_feedback").toggle(
+            function () { $("#feedback").animate({ left: "0px" }); },
+            function () { $("#feedback").animate({ left: "-362px" }); },
+           
+            });
+
+    }); //document.ready
+</script>
+
+@foreach (var item in Model)
+{
+    <div id="product-section">
+        <div class="row">
+            <div class="col-md-6">
+                <span style="margin-left:20%;">
+                    <img src="~/@item.Image" alt="@item.ItemName" class="image-responsive">
+                </span>
+
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>@item.ItemName</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <span class="label label-primary">Vintage</span>
+                        <span class="monospaced">No.#####</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="description">
+                            @item.Description
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 bottom-rule">
+                        <h2 class="product-price">@item.Price</h2>
+                    </div>
+                </div><!-- end row -->
+
+                <div class="row">
+                    <div class="col-md-4 text-center">
+                        <span class="monospaced">In Stock</span>
+                    </div>
+
+                </div><!-- end row -->
+                <div class="row">
+                    <div class="col-md-12 bottom-rule top-10"></div>
+                </div><!-- end row -->
+
+                <div class="row">
+                    <div class="col-md-12 top-10">
+                        <p>To order by telephone, <a href="tel:18005551212">please call 1-800-555-1212</a></p>
+                    </div>
+                </div><!-- end row -->
+                <div>
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active">
+                            <a href="#description"
+                               aria-controls="description"
+                               role="tab"
+                               data-toggle="tab">Description</a>
+                        </li>
+
+                    </ul>
+                    
+                </div>
+            </div>
+
+        </div><!-- end row -->
+        <div id="feedback">
+            @*@using (Html.BeginForm("Order", "Mail", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                @Html.Label("Color")
+                <input type="text" name="color" required="required" />
+                            @Html.Label("Mobile")
+                            <input type="text" name="mobile" required="required" />
+                            @Html.Label("Email")
+                            <input type="email" name="email" required="required" />
+                            <input type="hidden" name="Image" />
+                            <input type="hidden" name="Id" />
+                            <input type="hidden" name="Name" />
+                            <br /><br />
+                            <input type="submit" value="Order" class="btn btn-info" />
+            }
+            <a href="#" class="pull_feedback">Order This</a>*@
+            <form>
+                <h2>We Love Emails, Do you?</h2>
+                <p><label>Name: </label><input type="text" /></p>
+                <p><label>Email: </label><input type="text" /></p>
+                <p><label>Subject: </label><input type="text" /></p>
+                <p><label>Message: </label><textarea></textarea></p>
+                <p><input type="button" value="Send&raquo;" class="btn" /></p>
+            </form>asdasdas
+            <a href="#" class="pull_feedback" title="Click to leave feedback">Feedback</a>
+            dedepka
+        </div>
+
+    </div>
+}

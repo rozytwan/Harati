@@ -1,0 +1,122 @@
+﻿@model IEnumerable<Harati.Models.ItemCategoryWrap>
+
+@{
+    ViewBag.Title = "ViewItem";
+    Layout = "~/Views/Shared/_LayoutHarati.cshtml";
+}
+<script>
+    $(document).ready(function () {
+        $('#demo-1 .simpleLens-thumbnails-container img').simpleGallery({
+            loading_image: '~/Content/Images/loading.gif'
+        });
+        $('#demo-1 .simpleLens-big-image').simpleLens({
+            loading_image: '~/Content/Images/loading.gif'
+        });
+        //$('.msg_wrap').hide();
+        // $('.msg_head').click(function () {
+        // $('.msg_wrap').slideToggle('slow');
+        //});
+
+    });
+</script>
+<link href="~/assets/magnifier/css/jquery.simpleGallery.css" rel="stylesheet" />
+<link href="~/assets/magnifier/css/jquery.simpleLens.css" rel="stylesheet" />
+<script src="~/assets/magnifier/src/jquery.simpleGallery.js"></script>
+<script src="~/assets/magnifier/src/jquery.simpleLens.js"></script>
+<link href="~/assets/MessagePop/style.css" rel="stylesheet" />
+<script src="~/assets/MessagePop/script.js"></script>
+
+<div style="margin-top:12%; margin-left:5%;">
+    @foreach (var item in Model)
+    {
+        <div style="margin-left:5%">
+            <h3 class="tz-title-bold-3">@item.Category</h3>
+            <div id="tz-shop-content" class="row">
+                <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+
+                    <div id="slider" class="flexslider">
+                        <div class="slides">
+                            <div class="simpleLens-gallery-container" id="demo-1">
+                                <div class="simpleLens-container">
+                                    <div class="simpleLens-big-image-container">
+
+                                        <a class="simpleLens-lens-image" data-lens-image="/@item.Image">
+                                            <img src="~/@item.Image" class="simpleLens-big-image">
+                                        </a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="tzshop-summary">
+                        <h3>@item.ItemName</h3>
+                        <span class="tzproduct-single-price">
+                            Rs. @item.Price @*<small>$25.00</small>*@
+                        </span>
+                        <h6 class="tz-title-details">PRODUCT DETAILS</h6>
+
+                        <p>
+                            @item.Description
+                        </p>
+
+                    </div>
+
+                </div>
+            </div>
+            <p>
+                <a href="javascript:void(0);" onclick="history.go(-1);" class="btn btn-default btn-lg" title="Back to list">
+                    <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+                </a>
+            </p>
+            @if (ViewBag.IsEmailSent != null)
+            {
+                if (ViewBag.IsEmailSent != false)
+                {
+                    <div class="green">
+                        <div class="alert alert-success">
+                            <strong>Success!</strong>Order Received.
+                        </div>
+                    </div>
+                }
+            }
+            @if (ViewData["IsEmailSent"] != null)
+            {
+                if (ViewData["IsEmailSent"].ToString() != "false")
+                {
+                    <div class="green">
+                        <div class="alert alert-success">
+                            <strong>Success!</strong>Order Received.
+                        </div>
+                    </div>
+                }
+
+            }
+            <div class="msg_box" style="right:100px;margin-top:10%;margin-bottom:1%;">
+                <div class="msg_head">
+                    Order This
+                </div>
+                <div class="msg_wrap">
+                    <div class="msg_body">
+                        @using (Html.BeginForm("Order", "Mail", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                        {
+                            @Html.Label("Color")
+                            <input type="text" name="color" required="required" />
+                            @Html.Label("Mobile")
+                            <input type="text" name="mobile" required="required" />
+                            @Html.Label("Email")
+                            <input type="email" name="email" required="required" />
+                            <input type="hidden" name="Image" value="@item.Image.ToString()" />
+                            <input type="hidden" name="Id" value="@item.ItemId.ToString()" />
+                            <input type="hidden" name="Name" value="@item.ItemName.ToString()" />
+                            <br /><br />
+                            <input type="submit" value="Order" class="btn btn-info" />
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

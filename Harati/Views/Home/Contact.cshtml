@@ -1,0 +1,91 @@
+﻿@model Harati.Models.Mail
+@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_LayoutHarati.cshtml";
+}
+<div style="margin-top:5%;">
+    <section class="tz-our-blog theme-white">
+        <div class="container">
+            <div class="row">
+
+                <style>
+                    #map {
+                        height: 300px;
+                        width: 100%;
+                        margin-top: 3%;
+                    }
+                </style>
+
+                <div id="map"></div>
+                <script>
+                    //https://www.w3schools.com/html/tryit.asp?filename=tryhtml5_geolocation
+                    function initMap() {
+                        // var uluru = {lat: -25.363, lng: 131.044};
+                        var uluru = { lat: 27.7172453, lng: 85.3239605 };
+                        var map = new google.maps.Map(document.getElementById('map'), {
+                            zoom: 16,
+                            center: uluru
+                        });
+                        var marker = new google.maps.Marker({
+                            position: uluru,
+                            map: map
+                        });
+                    }
+                </script>
+                <script async defer
+                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBy4hpAV8o3AiIUlFiOAEwNDwehH8JjCFw&callback=initMap">
+                </script>
+
+                <div class="col-md-12">
+                    <div id="col-md-6" style="width:30%; float:left; margin-top:20px">
+                        <h4>Write to us</h4>
+                        @using (Html.BeginForm("Index", "Mail"))
+            {
+                            @Html.AntiForgeryToken()
+
+                            <div class="form-group">
+                                @Html.TextBoxFor(model => model.Name, null, new { id = "name", placeholder = "Name", @class = "form-control", required = "required" })
+                                @*@Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })*@
+                            </div>
+                            <div class="form-group">
+                                @Html.TextBoxFor(model => model.Email, null, new { id = "email", placeholder = "Enter Email", @class = "form-control", required = "required", type = "email" })
+                                @*@Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })*@
+                            </div>
+                            <div class="form-group">
+                                @Html.TextBoxFor(model => model.Mobile, null, new { id = "mobile", placeholder = "Enter Mobile", @class = "form-control", required = "required" })
+                                @*@Html.ValidationMessageFor(model => model.Mobile, "", new { @class = "text-danger" })*@
+                            </div>
+                            <div class="form-group">
+                                @Html.TextAreaFor(model => model.Body, new { id = "body", placeholder = "Enter Message", @class = "form-control", required = "required" })
+                                @*@Html.ValidationMessageFor(model => model.Body, "", new { @class = "text-danger" })*@
+                            </div>
+
+                            <button type="submit" class="btn btn-success">Send</button>
+
+                        }
+
+                    </div>
+                    <div id="col-md-6" style="width:50%; float:left; margin-top:2%;">
+
+
+                        @if (ViewBag.IsEmailSent != null)
+            {
+                if (ViewBag.IsEmailSent != false)
+                {
+                                <div class="green">
+                                    <div class="alert alert-success">
+                                        <strong>Success!</strong>Your Query Received !! We will Get Back To You.
+                                    </div>
+                                </div>
+                            }
+                        }
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+</div>

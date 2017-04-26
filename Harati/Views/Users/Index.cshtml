@@ -1,0 +1,15 @@
+﻿@using Microsoft.AspNet.Identity
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutHarati.cshtml";
+}
+
+@if (ViewBag.displayMenu == "Yes")
+{
+    <h4>Welcome <span>@User.Identity.GetUserName()</span></h4>
+    @*<h1>Welcome Admin. Now you can create user Role.</h1>
+    <h3>
+        <li>@Html.ActionLink("Manage Role", "Index", "Role")</li>
+    </h3>*@
+}
+

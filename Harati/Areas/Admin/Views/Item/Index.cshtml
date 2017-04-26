@@ -1,0 +1,92 @@
+﻿@model  IEnumerable<Harati.Models.Item>
+@using GridMvc.Html
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<p>
+    @Html.ActionLink("Create New", "AddItem")
+</p>
+@*<table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ItemName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Image)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Active)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category1.CatName)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ItemName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    <img src="~/@Html.DisplayFor(modelItem => item.Image) " height="50" width="50" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Active)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category1.CatName)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "EditItem", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "ViewItem", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "DeleteItem", new { id = item.Id })
+                </td>
+            </tr>
+        }
+
+    </table>*@
+
+<script src="~/Scripts/gridmvc.min.js"></script>
+<link href="~/Content/Gridmvc.css" rel="stylesheet" />
+<div class="code-cut">
+    @Html.Grid(Model).Columns(columns =>
+{
+
+    columns.Add(c => c.ItemName).Titled("Name").Filterable(true);
+    columns.Add(c => c.Price).Titled("Price").Filterable(true);
+    //columns.Add(c => c.Image).Titled("Image").Filterable(true);
+    //columns.Add(c => c.Description).Titled("Description").Filterable(true);
+    //columns.Add(c => c.Active).Titled("Is Active").Filterable(true);
+    columns.Add(c => c.Category1.CatName).Titled("Category").Filterable(true);
+
+    columns.Add().Titled("Edit")
+    .Encoded(false)
+    .Sanitized(false)
+    .SetWidth(30)
+    .RenderValueAs(c => Html.ActionLink("Edit", "EditItem", new { id = c.Id }));
+
+    columns.Add()
+            .Titled("Delete")
+            .SetWidth(10)
+            .Filterable(true)
+            .Sanitized(false)
+            .Encoded(false)
+           .RenderValueAs(c => Html.ActionLink("Delete", "DeleteItem", new { id = c.Id }));
+
+}).WithPaging(8).Sortable(true)
+</div>
