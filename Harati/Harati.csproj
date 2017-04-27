@@ -759,6 +759,7 @@
     <Content Include="Content\Images\carpet2.png" />
     <Content Include="Content\Images\carpet3.png" />
     <Content Include="Content\Images\CARPETH.jpeg" />
+    <Content Include="Content\Images\CarpetHead.png" />
     <Content Include="Content\Images\Carpeto.jpg" />
     <Content Include="Content\Images\feedback-buttons.png" />
     <Content Include="Content\Images\Home_button.gif" />
@@ -777,6 +778,8 @@
     <Content Include="Content\Images\Old\Chrysanthemum.jpg" />
     <Content Include="Content\Images\Old\mmexport1490350700772.jpg" />
     <Content Include="Content\Images\Old\mmexport1490350711300.jpg" />
+    <Content Include="Content\Images\order now.png" />
+    <Content Include="Content\Images\PashminaHead.png" />
     <Content Include="Content\Images\send.png" />
     <Content Include="Content\Images\Slider\17342819_1491638250860625_4293623610297479587_n.jpg" />
     <Content Include="Content\Images\Slider\17424680_1491629850861465_2494574468944379937_n.jpg" />
