@@ -683,40 +683,6 @@
     <Content Include="assets\magnifier\src\jquery.simpleLens.min.js" />
     <Content Include="assets\MessagePop\script.js" />
     <Content Include="assets\MessagePop\style.css" />
-    <Content Include="assets\rs-plugin\assets\arrowleft.png" />
-    <Content Include="assets\rs-plugin\assets\arrowright.png" />
-    <Content Include="assets\rs-plugin\assets\arrow_left.png" />
-    <Content Include="assets\rs-plugin\assets\arrow_left2.png" />
-    <Content Include="assets\rs-plugin\assets\arrow_right.png" />
-    <Content Include="assets\rs-plugin\assets\arrow_right2.png" />
-    <Content Include="assets\rs-plugin\assets\boxed_bgtile.png" />
-    <Content Include="assets\rs-plugin\assets\bullet.png" />
-    <Content Include="assets\rs-plugin\assets\bullets.png" />
-    <Content Include="assets\rs-plugin\assets\bullets2.png" />
-    <Content Include="assets\rs-plugin\assets\bullet_boxed.png" />
-    <Content Include="assets\rs-plugin\assets\coloredbg.png" />
-    <Content Include="assets\rs-plugin\assets\gridtile.png" />
-    <Content Include="assets\rs-plugin\assets\gridtile_3x3.png" />
-    <Content Include="assets\rs-plugin\assets\gridtile_3x3_white.png" />
-    <Content Include="assets\rs-plugin\assets\gridtile_white.png" />
-    <Content Include="assets\rs-plugin\assets\large_left.png" />
-    <Content Include="assets\rs-plugin\assets\large_right.png" />
-    <Content Include="assets\rs-plugin\assets\loader.gif" />
-    <Content Include="assets\rs-plugin\assets\navigdots.png" />
-    <Content Include="assets\rs-plugin\assets\navigdots_bgtile.png" />
-    <Content Include="assets\rs-plugin\assets\shadow1.png" />
-    <Content Include="assets\rs-plugin\assets\shadow2.png" />
-    <Content Include="assets\rs-plugin\assets\shadow3.png" />
-    <Content Include="assets\rs-plugin\assets\small_left.png" />
-    <Content Include="assets\rs-plugin\assets\small_left_boxed.png" />
-    <Content Include="assets\rs-plugin\assets\small_right.png" />
-    <Content Include="assets\rs-plugin\assets\small_right_boxed.png" />
-    <Content Include="assets\rs-plugin\assets\timer.png" />
-    <Content Include="assets\rs-plugin\css\settings.css" />
-    <Content Include="assets\rs-plugin\images\gradient\g30.png" />
-    <Content Include="assets\rs-plugin\images\gradient\g40.png" />
-    <Content Include="assets\rs-plugin\js\jquery.themepunch.revolution.min.js" />
-    <Content Include="assets\rs-plugin\js\jquery.themepunch.tools.min.js" />
     <Content Include="assets\slider\img\002.jpg" />
     <Content Include="assets\slider\img\003.jpg" />
     <Content Include="assets\slider\img\004.jpg" />
@@ -733,9 +699,9 @@
     <Content Include="assets\slider\js\jquery-1.11.3.min.js" />
     <Content Include="assets\slider\js\jssor.slider-23.1.0.mini.js" />
     <Content Include="assets\style.css" />
-    <Content Include="assets\video\video.mp4" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\etalage.css" />
     <Content Include="Content\Gridmvc.css" />
     <Content Include="Content\Images\1.png" />
     <Content Include="Content\Images\17342819_1491638250860625_4293623610297479587_n.jpg" />
@@ -755,6 +721,7 @@
     <Content Include="Content\Images\carpet logo new copy.jpg" />
     <Content Include="Content\Images\carpet test.png" />
     <Content Include="Content\Images\CARPET.jpeg" />
+    <Content Include="Content\Images\Carpet.png" />
     <Content Include="Content\Images\Carpet1.png" />
     <Content Include="Content\Images\carpet2.png" />
     <Content Include="Content\Images\carpet3.png" />
@@ -779,6 +746,9 @@
     <Content Include="Content\Images\Old\mmexport1490350700772.jpg" />
     <Content Include="Content\Images\Old\mmexport1490350711300.jpg" />
     <Content Include="Content\Images\order now.png" />
+    <Content Include="Content\Images\order1.png" />
+    <Content Include="Content\Images\pashmina.png" />
+    <Content Include="Content\Images\pashmina1.png" />
     <Content Include="Content\Images\PashminaHead.png" />
     <Content Include="Content\Images\send.png" />
     <Content Include="Content\Images\Slider\17342819_1491638250860625_4293623610297479587_n.jpg" />
@@ -787,6 +757,7 @@
     <Content Include="Content\Images\Slider\17862356_1510032135687903_9114566411705864438_n.jpg" />
     <Content Include="Content\Images\Slider\carpet logo new copy.jpg" />
     <Content Include="Content\Images\Slider\Carpeto.jpg" />
+    <Content Include="Content\jquery.etalage.min.js" />
     <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -824,12 +795,6 @@
     <Content Include="assets\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="assets\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="assets\fonts\glyphicons-halflings-regulard41d.eot" />
-    <Content Include="assets\rs-plugin\font\revicons90c6.eot" />
-    <Content Include="assets\rs-plugin\font\revicons90c6.svg" />
-    <Content Include="assets\rs-plugin\font\revicons90c6.ttf" />
-    <Content Include="assets\rs-plugin\font\revicons90c6.woff" />
-    <Content Include="assets\video\video.ogv" />
-    <Content Include="assets\video\video.webm" />
     <EntityDeploy Include="Models\HaratiDBModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>HaratiDBModel.Designer.cs</LastGenOutput>
@@ -927,6 +892,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="assets\video\" />
     <Folder Include="Views\Item\" />
     <Folder Include="Views\Slider\" />
     <Folder Include="Views\Users\" />

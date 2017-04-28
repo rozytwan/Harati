@@ -11,7 +11,7 @@ namespace Harati.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using PagedList;
     public partial class Item
     {
         public int Id { get; set; }
@@ -21,9 +21,14 @@ namespace Harati.Models
         public string Image { get; set; }
         public string Description { get; set; }
         public bool Active { get; set; }
-    
+
         public virtual Category Category1 { get; set; }
 
-        public List<Item> itemList { get; set; }
+        //public List<Item> itemList { get; set; }
+        public IEnumerable<Item> itemList
+        {
+            get; set;
+
+        }
     }
 }

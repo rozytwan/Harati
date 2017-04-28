@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Harati.Models;
-
+using PagedList;
 namespace Harati.Controllers
 {
     public class HomeController : Controller
@@ -36,25 +36,36 @@ namespace Harati.Controllers
             return View();
         }
 
-        public ActionResult Carpet()
+        public ActionResult Carpet(int? page)
         {
+            int pageSize = 6;
+            int pageNumber = (page ?? 1);
+
             db = new krennovaEntities();
-            objItm.itemList = db.Items.Where(i => i.Category == 1).ToList();
+            //objItm.itemList = db.Items.Where(i => i.Category == 1).ToList();
+
+            // objeventGallery.NewsList = newsList.OrderByDescending(i => i.Date).ToPagedList(pageNumber, pageSize);
+
+            objItm.itemList = db.Items.Where(i => i.Category == 1).OrderBy(i => i.Id).ToPagedList(pageNumber, pageSize);
             return View(objItm.itemList);
 
         }
 
-        public ActionResult Pashmina()
+        public ActionResult Pashmina(int? page)
         {
+            int pageSize = 6;
+            int pageNumber = (page ?? 1);
             db = new krennovaEntities();
-            objItm.itemList = db.Items.Where(i => i.Category == 2).ToList();
+            objItm.itemList = db.Items.Where(i => i.Category == 2).OrderBy(i => i.Id).ToPagedList(pageNumber, pageSize);
             return View(objItm.itemList);
         }
 
-        public ActionResult Items()
+        public ActionResult Items(int? page)
         {
+            int pageSize = 6;
+            int pageNumber = (page ?? 1);
             db = new krennovaEntities();
-            objItm.itemList = db.Items.ToList();
+            objItm.itemList = db.Items.OrderBy(i=>i.Id).ToPagedList(pageNumber, pageSize);
             return View(objItm.itemList);
         }
 

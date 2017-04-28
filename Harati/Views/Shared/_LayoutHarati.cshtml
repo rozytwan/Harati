@@ -10,7 +10,7 @@
     <link href="http://fonts.googleapis.com/css?family=Raleway:400,700,600,500,300,100,200,800" rel="stylesheet" />
     <link href="~/assets/css/owl.carousel.css" rel="stylesheet" />
     <link href="~/assets/css/owl.theme.css" rel="stylesheet" />
-    <link rel='stylesheet' href='~/assets/rs-plugin/css/settings.css' />
+    @*<link rel='stylesheet' href='~/assets/rs-plugin/css/settings.css' />*@
 
     <link href="~/assets/style.css" rel="stylesheet" />
     <script src="~/assets/js/jquery.min.js"></script>
@@ -21,7 +21,7 @@
 <body>
     <header class="tz-header tz-header2">
         <div class="container">
-            <h3 class="tz-logo pull-left" style="margin-left:1%;margin-right:30px;">
+            <h3 class="tz-logo pull-left" style="margin-left:1.5%;margin-right:20px;">
                 <a href="@Url.Action("Index", "Home")" style="text-decoration:none;color:white;">
                     <img src="~/assets/images/logo name.jpg" alt="dekor">
                 </a>
@@ -30,19 +30,15 @@
                 <i class="fa fa-bars"></i>
             </button>
 
-            <nav class="pull-right" style="color:white;float:right;color:#087dae;margin-right:5.5%;">
+            <nav class="pull-right" style="color:white;float:right;color:#087dae;margin-right:5.5%;margin-top:5px;">
                 <span class="glyphicon glyphicon-envelope">&nbsp;info@haraticarpet.com</span>&nbsp;
                 <span class="glyphicon glyphicon-phone">&nbsp;977-9851097164 | 01-4481225</span>
-
             </nav>
             <nav class="pull-right">
                 <ul class="nav-collapse">
                     <li>
-                        @*@Html.ActionLink("HOME", "Index", "Home")*@
-
-
                         <a href="@Url.Action("Index", "Home")" style="text-decoration:none;color:saddlebrown">
-                            @*<img src="~/Content/Images/Home_button.gif" />*@
+
                             <b>Home</b>
                         </a>
                     </li>
@@ -98,7 +94,7 @@
             width: 40% !important;
         }
     </style>
-    <footer style="margin-top:1%">
+    <footer>
         <div class="tz-footer-content">
 
             <div class="container">
@@ -169,8 +165,10 @@
 
                 </div>
                 <div class="row">
-                   <center><span>&copy; Copyright 2017.  All rights reserved @*&#64;*@Harati</span>
-</center> </div>
+                    <center>
+                        <span>&copy; Copyright 2017.  All rights reserved @*&#64;*@Harati</span>
+                    </center>
+                </div>
             </div>
         </div>
 
@@ -184,7 +182,7 @@
     <script src="~/assets/js/jquery.parallax-1.1.3.js"></script>
     <script src="~/assets/js/owl.carousel.js"></script>
     <script src="~/assets/js/resize.js"></script>
-    <script src="~/assets/js/off-canvas.js"></script>
+    @*<script src="~/assets/js/off-canvas.js"></script>*@
     <script src="~/assets/js/jquery.isotope.min.js"></script>
     <script src="~/assets/js/custom-portfolio.js"></script>
     <script src="~/assets/js/custom.js"></script>

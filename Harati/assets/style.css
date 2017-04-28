@@ -402,9 +402,10 @@ Tags: ajax contact form, animation, blog, bootstrap, business, corporate, css3, 
 
 .tz-header {
     /*background: #333333;*/
-    background-image: url(../Content/Images/Banner_bgg.gif);
-    background-repeat: repeat-x;
-    padding: 8px 0;
+    /*background-image: url(../Content/Images/Banner_bggg.gif);
+    background-repeat: repeat-x;*/
+    background-color:#efe;
+    /*padding: 8px 0;*/
     position: relative;
     z-index: 9999;
 }
@@ -426,7 +427,7 @@ Tags: ajax contact form, animation, blog, bootstrap, business, corporate, css3, 
         }
 
 .tz-logo {
-    margin: 12px 0;
+    /*margin: 0px 0;*/
     transition: all 0.3s linear 0s;
     -moz-transition: all 0.3s linear 0s;
     -webkit-transition: all 0.3s linear 0s;
@@ -589,9 +590,11 @@ body .tz-header3 ul.nav-collapse li a:after {
 
 /*------------Header 2----------*/
 header.tz-header2 {
-    position: fixed;
-    background-image: url(../Content/Images/Banner_bgg.gif);
-    background-repeat: repeat-x;
+    /*position: fixed;*/
+     /*background: #333333;*/
+    /*background-image: url(../Content/Images/Banner_bggg.gif);
+    background-repeat: repeat-x;*/
+    background-color:white;
     top: 0px;
     left: 0;
     width: 100%;
@@ -600,10 +603,10 @@ header.tz-header2 {
     -webkit-transition: all 0.4s linear 0s;
     -ms-transition: all 0.4s linear 0s;
     -o-transition: all 0.4s linear 0s;
-    z-index: 999999;
+    /*z-index: 999999;*/
 }
 
-body header.tz-header-animation {
+/*body header.tz-header-animation {
     top: 0;
     background: rgba(0,0,0,0.8);
     padding: 0;
@@ -615,13 +618,15 @@ body header.tz-header-animation {
     -webkit-transform: scale(0.8);
     -ms-transform: scale(0.8);
     -o-transform: scale(0.8);
-}
+}*/
 
 
 /*------------Header 3-----------*/
 body .tz-header3 {
-    background-image: url(../Content/Images/Banner_bgg.gif);
-    background-repeat: repeat-x;
+     /*background: #333333;*/
+    /*background-image: url(../Content/Images/Banner_bggg.gif);
+    background-repeat: repeat-x;*/
+    background-color:#efe;
     padding: 27px 0 28px;
 }
 
@@ -3360,7 +3365,7 @@ body .tz-view-style2:hover:after {
 .tz-our-blog {
     position: relative;
     overflow: hidden;
-    padding: 38px 0 30px;
+    /*padding: 38px 0 30px;*/
     text-align: center;
 }
 
@@ -10607,7 +10612,7 @@ body .kfrontstats .kcol-mid {
 */
 .tz-footer-content {
     background: #ccc;
-    /*background-image: url(../Content/Images/Banner_bgg.gif);*/
+    /*background-image: url(../Content/Images/Banner_bggg.gif);*/
     /*background-repeat: repeat-y;*/
     /*padding: 5px 5px 5px 5px;*/
     height:100px;
@@ -11098,7 +11103,7 @@ body .kfrontstats .kcol-mid {
 */
 .home-rtl .tz-logo {
     float: right !important;
-    margin: 15px 0 !important;
+    /*margin: 15px 0 !important;*/
 }
 
 body.home-rtl header .mega-dropdown-center {
@@ -11285,7 +11290,7 @@ body.home-rtl .tz-recent-post li {
         -ms-transition: 500ms ease 0s;
         -o-transition: 500ms ease 0s;
         top: 0;
-        background-image: url(../Content/Images/Banner_bgg.gif);
+        background-image: url(../Content/Images/Banner_bggg.gif);
         background-repeat: repeat-y;
         height: 50px;
     }
@@ -12831,7 +12836,7 @@ body.home-rtl .tz-recent-post li {
 
     header.tz-header2 {
         /*background: rgba(0, 0, 0, 0.8);*/
-        background-image: url(../Content/Images/Banner_bgg.gif);
+        background-image: url(../Content/Images/Banner_bggg.gif);
         background-repeat: repeat-y;
         left: 0;
         position: absolute;

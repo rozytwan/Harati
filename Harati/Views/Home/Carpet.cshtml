@@ -1,10 +1,15 @@
-﻿@model IEnumerable<Harati.Models.Item>
+﻿@model PagedList.IPagedList<Harati.Models.Item>
+@using PagedList.Mvc;
 
 @{
     ViewBag.Title = "Carpet";
     Layout = "~/Views/Shared/_LayoutHarati.cshtml";
 }
-
+<center>
+    <span>
+        <img src="~/Content/Images/Carpet.png" />
+    </span>
+</center>
 <style>
     .image {
         display: block;
@@ -47,12 +52,10 @@
 
     <div class="container">
         <div class="row">
-            <center>
-                <img src="~/Content/Images/CarpetHead.png" />
-            </center>
+
             @foreach (var item in Model)
             {
-                <div class="col-lg-4 col-md-4 col-sm-9 col-xs-12" style="padding-top:50px;">
+                <div class="col-lg-4 col-md-4 col-sm-9 col-xs-12">
                     <div class="our-blog-item theme-gray" style="height:400px;width:300px; margin:auto;">
 
                         <div class="blog-thumb" style="height:400px;width:300px;">
@@ -71,10 +74,16 @@
 
 
         </div>
-        <!--end class row-->
+        @*<a href="@Url.Action("Items","Home")">
+                <span><img src="~/Content/Images/loadmore.png" style="margin:14px 4px 4px 1000px;" /> </span>
+            </a>*@
+        <div class="row">
 
-        <a href="@Url.Action("Items","Home")">
-            <span><img src="~/Content/Images/loadmore.png" style="margin:14px 4px 4px 1000px;" /> </span>
-        </a>
+
+            <div>
+                Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+                @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+            </div>
+        </div>
     </div><!--end class container-->
 </section>
