@@ -28,7 +28,7 @@
             border: 1px solid #ccc;
             padding: 10px;
             border-radius: 5px;
-            background-color: #fff;
+            background-color: #faf9f6;
             
         }
 
@@ -39,7 +39,7 @@
                 margin-right: 20px;
                 width: 70px;
                 font-weight: bold;
-                color: #019AC6;
+                color: #380793;
                 font-size: 14px;
             }
 
@@ -67,16 +67,17 @@
             height: 28px;
         }
 
-        #feedback form textarea {
+        /*#feedback form textarea {
             width: 200px;
             height: 140px;
-            border: 1px solid;
-        }
+            /*border: 1px solid;
+            border:none;
+        }*/
 
         #feedback form input[type="text"] {
             width: 240px;
             height: 30px;
-            border: 1px solid ;
+            border: 1px solid #808080;
         }
 
         #feedback h2 {
@@ -92,7 +93,7 @@
             return false;
         },
 			function () {
-			    $("#feedback").animate({ left: "-320px" });
+			    $("#feedback").animate({ left: "-330px" });
 			    return false;
 			}
 		);
@@ -174,15 +175,15 @@
             <div class="form-group">
                 @*@Html.Label("Color", new { @class = "form - control" })*@
                 <label for="color">Color:</label>
-                <input type="text" name="color" class="form-control" required="required" />
+                <input type="text" name="color" class="form-control" style="width:200px;"  required="required" />
             </div>
             <div class="form-group">
                 <label for="mobile">Mobile:</label>
-                <input type="text" name="mobile" class="form-control "  required="required" />
+                <input type="text" name="mobile" class="form-control" style="width:200px;"  required="required" />
             </div>
             <div class="form-group">
                 <label for="email">Email:</label>
-                <input type="text" name="email" class="form-control "  required="required" />
+                <input type="text" name="email" class="form-control" style="width:240px;" required="required" />
             </div>
             <input type="hidden" name="Image" value="@item.Image.ToString()" />
             <input type="hidden" name="Id" value="@item.ItemId.ToString()" />

@@ -734,6 +734,8 @@
     <Content Include="Content\Images\Koala.jpg" />
     <Content Include="Content\Images\Lighthouse.jpg" />
     <Content Include="Content\Images\loading.gif" />
+    <Content Include="Content\Images\loadmore 100x35-2.png" />
+    <Content Include="Content\Images\loadmore 150x51-2.png" />
     <Content Include="Content\Images\loadmore.png" />
     <Content Include="Content\Images\mmexport1490350700772.jpg" />
     <Content Include="Content\Images\mmexport1490350711300.jpg" />
@@ -831,6 +833,7 @@
     <Content Include="Areas\assets\plugins\weather-icons-master\font\weathericons-regular-webfont.woff" />
     <Content Include="Areas\assets\plugins\weather-icons-master\font\weathericons-regular-webfontd41d.eot" />
     <Content Include="Grid.mvc.readme" />
+    <Content Include="Content\Images\Roman-Bold.ttf" />
     <None Include="Properties\PublishProfiles\Harati.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\gridmvc.js" />
